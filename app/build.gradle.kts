@@ -74,6 +74,7 @@ dependencies {
     //MVI
     implementation (libs.mvikotlin.core)
     implementation (libs.mvikotlin.main)
+    implementation (libs.mvikotlin.logging)
     implementation (libs.mvikotlin.coroutines)
 
     //Navigation

@@ -35,7 +35,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 icons = { group = "androidx.compose.material", name = "material-icons-extended" }
 mvikotlin-core = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mvikotlin" }
 mvikotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mvikotlin" }
-mvikotlin-coroutines = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
+mvikotlin-logging = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-logging", version.ref = "mvikotlin" }
+mvikotlin-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mvikotlin" }
 decompose-core = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 decompose-jetpack = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
 room-core = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
