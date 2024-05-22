@@ -20,6 +20,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        val key =
+            property("apikey")?.toString() ?: error(
+                "You should add apikey into gradle.properties"
+            )
+        buildConfigField("String", "WEATHER_API_KEY", "\"$key\"")
     }
 
     buildTypes {
@@ -40,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
@@ -72,10 +78,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //MVI
-    implementation (libs.mvikotlin.core)
-    implementation (libs.mvikotlin.main)
-    implementation (libs.mvikotlin.logging)
-    implementation (libs.mvikotlin.coroutines)
+    implementation(libs.mvikotlin.core)
+    implementation(libs.mvikotlin.main)
+    implementation(libs.mvikotlin.logging)
+    implementation(libs.mvikotlin.coroutines)
 
     //Navigation
     implementation(libs.decompose.core)
