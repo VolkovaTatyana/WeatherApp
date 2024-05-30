@@ -2,6 +2,7 @@ package com.example.weatherapp.data.network.api
 
 import com.example.weatherapp.BuildConfig
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -12,10 +13,10 @@ object ApiFactory {
     private const val KEY_PARAM = "key"
 
     private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor {chain ->
+        .addInterceptor { chain ->
             val originalRequest = chain.request()
             val newUrl = originalRequest
-                .url()
+                .url
                 .newBuilder()
                 .addQueryParameter(KEY_PARAM, BuildConfig.WEATHER_API_KEY)
                 .build()
@@ -23,7 +24,11 @@ object ApiFactory {
                 .url(newUrl)
                 .build()
             chain.proceed(newRequest)
-        }.build()
+        }
+        .addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        })
+        .build()
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)

@@ -101,4 +101,5 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gsonConverter)
+    implementation(libs.logging.interceptor)
 }
