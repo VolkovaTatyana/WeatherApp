@@ -104,7 +104,7 @@ class SearchStoreFactory @Inject constructor(
                 }
 
                 Intent.ClickBack -> {
-                    Label.ClickBack
+                    publish(Label.ClickBack)
                 }
 
                 is Intent.ClickCity -> {
